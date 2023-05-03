@@ -3,6 +3,7 @@
 The challenge is we have to write a function that take an array and return it in reverse order.
 
 ## Whiteboard Process
+![555555555555](https://user-images.githubusercontent.com/72322641/235809910-4adaf227-d42d-4a82-8589-1b4d8c646aee.png)
 
 ## Approach & Efficiency
 looping through the array n/2 times, and each time i am switching two elements of the array to be reversed finally when the iteration is done, it is O(n) complexity
