@@ -6,3 +6,6 @@ Here you can see the code challenges that implemented using some Data structures
 
 -*[Array Reverse](https://github.com/11mones/data-structures-and-algorithms/blob/array-reverse/Array_reverse.md)*
 
+
+-*[Insert shift array](https://github.com/11mones/data-structures-and-algorithms/blob/main/insertShiftArray.md)*
+
