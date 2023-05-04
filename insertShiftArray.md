@@ -14,37 +14,11 @@ Here is the code, and you have just to pass the array and the number to the func
 
 
 def insertShiftArray (arr , input):
-
-
-
-
-
     temp = int(len(arr)/2)
-
-
-
-
     for x in arr :
-
-
-
-
-
-
         if x == temp :
-
-
-
-
-
-
             arr.insert(x, input)
-
-
-
-
-
-            
+      
     return arr
 
 
