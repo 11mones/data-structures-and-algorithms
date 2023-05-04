@@ -30,6 +30,7 @@ def insertShiftArray (arr , input):
 
 
 
+
         if x == temp :
 
 
@@ -42,7 +43,7 @@ def insertShiftArray (arr , input):
 
 
 
-            
+
             
     return arr
 
