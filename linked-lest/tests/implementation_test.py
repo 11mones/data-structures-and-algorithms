@@ -58,11 +58,11 @@ def test_insert_multiple():
     ll.insertToHead(8)
     temp = []
     node = ll.head
-    while (ll.head.next is not None) : 
+    while node is not None:
         temp.append(node.data)
         node = node.next
     actual = temp
-    expected = temp
+    expected = [8, 7, 6, 5]
     assert actual == expected
 
 
@@ -72,10 +72,10 @@ def test_insert_multiple():
 # Will return true when finding a value within the linked list that exists
 def test_existence():
     ll = linked_list()
-    ll.insertToHead(5)
+    ll.insertToHead(8)
     ll.insertToHead(6)
     ll.insertToHead(7)
-    ll.insertToHead(8)
+    ll.insertToHead(5)
     temp  = ll.ifExist(7)
     actual = temp
     expected = True
@@ -92,7 +92,7 @@ def test_not_existence():
     ll.insertToHead(6)
     ll.insertToHead(7)
     ll.insertToHead(8)
-    temp  = ll.ifExist(7)
+    temp  = ll.ifExist(15)
     actual = temp
     expected = False
     assert actual == expected
