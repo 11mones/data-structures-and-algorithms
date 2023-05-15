@@ -113,3 +113,45 @@ def test_formating_string():
 
 
 
+
+# Can successfully add a node to the end of the linked list
+# Can successfully add multiple nodes to the end of a linked list
+
+
+def test_nttttt():
+    ll = linked_list()
+    ll.append(5)
+    ll.append(6)
+    ll.append(7)
+    ll.append(8)
+    temp = []
+    node = ll.head
+    while node is not None:
+        temp.append(node.data)
+        node = node.next
+    actual = temp
+    expected = [5, 6, 7, 8]
+    assert actual == expected
+
+
+
+
+#Can successfully insert a node before a node located i the middle of a linked list
+
+def test_nrrrrrr():
+    ll = linked_list()
+    ll.append(5)
+    ll.append(6)
+    ll.append(7)
+    ll.append(8)
+    # now i have : head -> {5} -> {6} -> {7} -> {8} -> X
+    ll.insert_before(7,90)
+    # i should have this now : head -> {5} -> {6} -> {90} -> {7} -> {8} -> X
+    temp = []
+    node = ll.head
+    while node is not None:
+        temp.append(node.data)
+        node = node.next
+    actual = temp
+    expected = [5, 6, 90 ,7, 8]
+    assert actual == expected
