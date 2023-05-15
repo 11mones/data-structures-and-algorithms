@@ -2,7 +2,20 @@
 We want to create 3 methods for the insertion in the linked list.
 
 ## Whiteboard Process
-<!-- Embedded whiteboard image -->
+### append
+![algo (3)](https://github.com/11mones/data-structures-and-algorithms/assets/72322641/a998fd65-81cb-47ed-bd88-a0b8a9bf4d4e)
+### insert before
+![algo (4)](https://github.com/11mones/data-structures-and-algorithms/assets/72322641/ed3120cf-1e4f-4887-9feb-e28c337769c6)
+### insert after
+![algo (5)](https://github.com/11mones/data-structures-and-algorithms/assets/72322641/6f446a3d-28ba-4200-9edb-80bcc5130d33)
+
+
+
+
+
+
+
+
 
 ## Approach & Efficiency
 Everything works correctly in the three methods and the edge cases is covered in the tests and in the methods itself, the methods is Big(n) complexity.
