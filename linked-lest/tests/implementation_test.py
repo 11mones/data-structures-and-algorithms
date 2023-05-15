@@ -113,3 +113,110 @@ def test_formating_string():
 
 
 
+
+# Can successfully add a node to the end of the linked list
+# Can successfully add multiple nodes to the end of a linked list
+def test_end():
+    ll = linked_list()
+    ll.append(5)
+    ll.append(6)
+    ll.append(7)
+    ll.append(8)
+    temp = []
+    node = ll.head
+    while node is not None:
+        temp.append(node.data)
+        node = node.next
+    actual = temp
+    expected = [5, 6, 7, 8]
+    assert actual == expected
+
+
+
+
+#Can successfully insert a node before a node located i the middle of a linked list
+
+def test_before():
+    ll = linked_list()
+    ll.append(5)
+    ll.append(6)
+    ll.append(7)
+    ll.append(8)
+    # now i have : head -> {5} -> {6} -> {7} -> {8} -> X
+    ll.insert_before(7,90)
+    # i should have this now : head -> {5} -> {6} -> {90} -> {7} -> {8} -> X
+    temp = []
+    node = ll.head
+    while node is not None:
+        temp.append(node.data)
+        node = node.next
+    actual = temp
+    expected = [5, 6, 90 ,7, 8]
+    assert actual == expected
+
+
+
+
+
+
+#Can successfully insert a node before the first node of a linked list
+def test_before_first():
+    ll = linked_list()
+    ll.append(5)
+    ll.append(6)
+    ll.append(7)
+    ll.append(8)
+    # now i have : head -> {5} -> {6} -> {7} -> {8} -> X
+    ll.insert_before(5,90)
+    # i should have this now : head -> {5} -> {6} -> {90} -> {7} -> {8} -> X
+    temp = []
+    node = ll.head
+    while node is not None:
+        temp.append(node.data)
+        node = node.next
+    actual = temp
+    expected = [90, 5, 6 ,7, 8]
+    assert actual == expected
+
+
+
+
+
+#Can successfully insert after a node in the middle of the linked list
+def test_after():
+    ll = linked_list()
+    ll.append(5)
+    ll.append(6)
+    ll.append(7)
+    ll.append(8)
+    # now i have : head -> {5} -> {6} -> {7} -> {8} -> X
+    ll.insert_after(7,90)
+    # i should have this now : head -> {5} -> {6} -> {7} -> {90} -> {8} -> X
+    temp = []
+    node = ll.head
+    while node is not None:
+        temp.append(node.data)
+        node = node.next
+    actual = temp
+    expected = [5, 6, 7 ,90, 8]
+    assert actual == expected
+
+# Can successfully insert a node after the last node of the linked list
+def test_after_last():
+    ll = linked_list()
+    ll.append(5)
+    ll.append(6)
+    ll.append(7)
+    ll.append(8)
+    # now i have : head -> {5} -> {6} -> {7} -> {8} -> X
+    ll.insert_after(8,90)
+    # i should have this now : head -> {5} -> {6} -> {7} -> {90} -> {8} -> X
+    temp = []
+    node = ll.head
+    while node is not None:
+        temp.append(node.data)
+        node = node.next
+    actual = temp
+    expected = [5, 6, 7 ,8, 90]
+    assert actual == expected
+
