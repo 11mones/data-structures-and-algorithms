@@ -3,11 +3,12 @@ We want to create 3 methods for the insertion in the linked list.
 
 ## Whiteboard Process
 ### append
-![algo (3)](https://github.com/11mones/data-structures-and-algorithms/assets/72322641/a998fd65-81cb-47ed-bd88-a0b8a9bf4d4e)
+![algo (9)](https://github.com/11mones/data-structures-and-algorithms/assets/72322641/1c077617-71f8-473e-9847-cca4b4e2c915)
 ### insert before
-![algo (4)](https://github.com/11mones/data-structures-and-algorithms/assets/72322641/ed3120cf-1e4f-4887-9feb-e28c337769c6)
+![algo (8)](https://github.com/11mones/data-structures-and-algorithms/assets/72322641/6b402d96-ca3d-4fed-b548-b56fc577adf4)
 ### insert after
-![algo (5)](https://github.com/11mones/data-structures-and-algorithms/assets/72322641/6f446a3d-28ba-4200-9edb-80bcc5130d33)
+![algo (7)](https://github.com/11mones/data-structures-and-algorithms/assets/72322641/2d95cf98-b7b0-43f7-8bcd-24d5bc1c71e9)
+
 
 
 
