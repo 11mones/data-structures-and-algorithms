@@ -46,8 +46,54 @@ class linked_list :
     
 
 
+# code challenge 06 methods 
+
+
+    def append(self, value):
+        new_node = node(value)
+        if self.head is None: # This means the list is empty
+            self.head = new_node
+        else:
+            temp = self.head
+            while temp.next is not None: # because here we wanna make temp.next = None (means the least element in list)
+                temp = temp.next
+            temp.next = new_node
+
 
     
+
+    def insert_before(self, target, value):
+        new_node = node(value)
+        if self.head is None:
+            return
+        if self.head.data == target:
+            new_node.next = self.head
+            self.head = new_node
+            return
+
+        current = self.head
+        while current.next is not None:
+            if current.next.data == target:
+                new_node.next = current.next
+                current.next = new_node
+                return
+            current = current.next
+
+   
+
+
+    def insert_after(self, target, value):
+        new_node = node(value)
+        current = self.head
+        while current.next is not None:
+            if current.next.data == target:
+                current = current.next
+                new_node.next = current.next
+                current.next = new_node
+                return
+            current = current.next
+            
+        
 
 
 
