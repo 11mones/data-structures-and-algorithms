@@ -220,3 +220,70 @@ def test_after_last():
     expected = [5, 6, 7 ,8, 90]
     assert actual == expected
 
+
+
+
+
+
+# Code challenge 07 : 
+#Where k is greater than the length of the linked list
+
+# def test_out_of_range():
+#     ll = linked_list()
+#     ll.append(5)
+#     ll.append(6)
+#     ll.append(7)
+#     ll.append(8)
+#     # now i have : head -> {5} -> {6} -> {7} -> {8} -> X
+#     ll.kthFromEnd(20)
+#     temp = []
+#     node = ll.head
+#     while node is not None:
+#         temp.append(node.data)
+#         node = node.next
+#     if 20 > len(temp) : 
+#         raise IndexError("Index out of range")
+    
+
+
+
+
+
+# Where k and the length of the list are the same
+
+def test_k_and_list_same2222():
+    #this one should return the last element
+    ll = linked_list()
+    ll.append(5)
+    ll.append(6)
+    ll.append(7)
+    ll.append(8)
+    # now i have : head -> {5} -> {6} -> {7} -> {8} -> X
+    ll.kthFromEnd(1)
+    temp = []
+    node = ll.head
+    while node is not None:
+        temp.insert(0,node.data)
+        node = node.next
+    if 4 == len(temp) : 
+        return temp[0]
+
+
+def test_k_and_list_same():
+    #this one should return the last element
+    ll = linked_list()
+    ll.append(5)
+    ll.append(6)
+    ll.append(7)
+    ll.append(8)
+    # now i have : head -> {5} -> {6} -> {7} -> {8} -> X
+    ll.kthFromEnd(1)
+    temp = []
+    node = ll.head
+    while node is not None:
+        temp.insert(0,node.data)
+        node = node.next
+
+    actual = temp[1]
+    expected = 7
+    assert actual == expected
