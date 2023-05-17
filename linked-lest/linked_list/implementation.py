@@ -93,7 +93,25 @@ class linked_list :
                 return
             current = current.next
             
-        
+
+
+
+
+
+
+
+    def kthFromEnd(self , k) : 
+        l = []
+        current = self.head
+        while current.next is not None:
+            l.append(current.data)
+            current = current.next
+
+        if k == len(l) : 
+            return l[0]
+
+        return l[k]
+
 
 
 
