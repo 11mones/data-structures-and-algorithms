@@ -228,21 +228,21 @@ def test_after_last():
 # Code challenge 07 : 
 #Where k is greater than the length of the linked list
 
-# def test_out_of_range():
-#     ll = linked_list()
-#     ll.append(5)
-#     ll.append(6)
-#     ll.append(7)
-#     ll.append(8)
-#     # now i have : head -> {5} -> {6} -> {7} -> {8} -> X
-#     ll.kthFromEnd(20)
-#     temp = []
-#     node = ll.head
-#     while node is not None:
-#         temp.append(node.data)
-#         node = node.next
-#     if 20 > len(temp) : 
-#         raise IndexError("Index out of range")
+def test_out_of_range():
+    ll = linked_list()
+    ll.append(5)
+    ll.append(6)
+    ll.append(7)
+    ll.append(8)
+    # now i have : head -> {5} -> {6} -> {7} -> {8} -> X
+    ll.kthFromEnd(20)
+    temp = []
+    node = ll.head
+    while node is not None:
+        temp.append(node.data)
+        node = node.next
+    if 20 > len(temp) : 
+        raise IndexError("Index out of range")
     
 
 
@@ -250,24 +250,6 @@ def test_after_last():
 
 
 # Where k and the length of the list are the same
-
-def test_k_and_list_same2222():
-    #this one should return the last element
-    ll = linked_list()
-    ll.append(5)
-    ll.append(6)
-    ll.append(7)
-    ll.append(8)
-    # now i have : head -> {5} -> {6} -> {7} -> {8} -> X
-    ll.kthFromEnd(1)
-    temp = []
-    node = ll.head
-    while node is not None:
-        temp.insert(0,node.data)
-        node = node.next
-    if 4 == len(temp) : 
-        return temp[0]
-
 
 def test_k_and_list_same():
     #this one should return the last element
@@ -277,13 +259,85 @@ def test_k_and_list_same():
     ll.append(7)
     ll.append(8)
     # now i have : head -> {5} -> {6} -> {7} -> {8} -> X
-    ll.kthFromEnd(1)
+    ll.kthFromEnd(3)
+    temp = []
+    node = ll.head
+    while node is not None:
+        temp.insert(0,node.data)
+        node = node.next
+    
+    actual = temp[len(temp) - 1]
+    expected = 5
+    assert actual == expected
+
+
+
+
+# Where k is not a positive integer 
+
+def test_not_positive():
+    #this one should return the last element
+    ll = linked_list()
+    ll.append(5)
+    ll.append(6)
+    ll.append(7)
+    ll.append(8)
+    ll.append(9)  
+    # now i have : head -> {5} -> {6} -> {7} -> {8} -> X
+    ll.kthFromEnd(-2)
+    temp = []
+    node = ll.head
+    while node is not None:
+        temp.insert(0,node.data)
+        node = node.next    
+    actual = temp[-2]
+    expected = 6
+    assert actual == expected
+
+
+
+
+
+
+# Where the linked list is of a size 1
+
+
+def test_size_one():
+    #this one should return the last element
+    ll = linked_list()
+    ll.append(5)
+    # now i have : head -> {5} -> X
+    ll.kthFromEnd(8)
+    temp = []
+    node = ll.head
+    while node is not None:
+        temp.insert(0,node.data)
+        node = node.next    
+    actual = temp[0]
+    expected = 5
+    assert actual == expected
+
+
+
+
+
+
+
+# “Happy Path” where k is not at the end, but somewhere in the middle of the linked list
+def test_happy():
+    ll = linked_list()
+    ll.append(5)
+    ll.append(6)
+    ll.append(7)
+    ll.append(8)
+    # now i have : head -> {5} -> {6} -> {7} -> {8} -> X
+    ll.kthFromEnd(2)
     temp = []
     node = ll.head
     while node is not None:
         temp.insert(0,node.data)
         node = node.next
 
-    actual = temp[1]
-    expected = 7
+    actual = temp[2]
+    expected = 6
     assert actual == expected

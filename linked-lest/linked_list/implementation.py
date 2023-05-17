@@ -103,19 +103,35 @@ class linked_list :
     def kthFromEnd(self , k) : 
         l = []
         current = self.head
-        while current.next is not None:
-            l.append(current.data)
+        while current is not None:
+            l.insert(0,current.data)
             current = current.next
-
         if k == len(l) : 
+            return l[0]
+        elif len(l) == 1:
             return l[0]
 
         return l[k]
 
 
 
-
- 
+# lo = linked_list()
+# lo.append(5)
+# lo.append(4)
+# lo.append(3)
+# lo.append(2)
+# lo.append(1)
+# lo.append(0)
+# lo.append(-1)
+# lo.append(-2)
+# ll = linked_list()
+# ll.append(5)
+# ll.append(6)
+# ll.append(7)
+# ll.append(8)
+# ll.append(9)  
+# print(ll.__str__())
+# print(ll.kthFromEnd(-2))
 
 
 
