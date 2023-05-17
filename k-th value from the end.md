@@ -4,6 +4,7 @@ kthFromEnd function that returns the Kth position node in the linked list starti
 
 ## Whiteboard Process
 
+![algo (10)](https://github.com/11mones/data-structures-and-algorithms/assets/72322641/2d1cc63c-c461-4c46-b49b-b98a953495fa)
 
 ## Approach & Efficiency
 The approach is : create an empty list l, set current to the head of the linked list then traverse the linked list using a while loop and Insert the data of the current node at the beginning of the list l using l.insert(0, current.data), then we wanna check if k is equal to the length of the list l, If so return the first element of the list l, as it represents the kth node from the end, we want also to check if the length of the list l is equal to 1 to return the single element of linked list if it's length is 1
