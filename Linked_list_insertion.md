@@ -4,10 +4,19 @@ We want to create 3 methods for the insertion in the linked list.
 ## Whiteboard Process
 ### append
 ![algo (9)](https://github.com/11mones/data-structures-and-algorithms/assets/72322641/1c077617-71f8-473e-9847-cca4b4e2c915)
+### Code : 
+![append](https://github.com/11mones/data-structures-and-algorithms/assets/72322641/d9f0d8df-47c3-4fc9-a239-1a19b77ce4a9)
+
 ### insert before
 ![algo (8)](https://github.com/11mones/data-structures-and-algorithms/assets/72322641/6b402d96-ca3d-4fed-b548-b56fc577adf4)
+### Code : 
+![before](https://github.com/11mones/data-structures-and-algorithms/assets/72322641/95e43d96-4e7d-4f65-96bb-b61e1fade4dc)
+
 ### insert after
 ![algo (7)](https://github.com/11mones/data-structures-and-algorithms/assets/72322641/2d95cf98-b7b0-43f7-8bcd-24d5bc1c71e9)
+### Code : 
+
+![after](https://github.com/11mones/data-structures-and-algorithms/assets/72322641/06f1ad91-4333-48e7-9678-340a7d08d0ca)
 
 
 
