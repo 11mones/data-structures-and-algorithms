@@ -242,7 +242,6 @@ class Queue:
         """
     Adds an element to the back of the queue.
     Argsument is the value to be added to the queue.
-
         """
         if self.front is None:
             raise Exception("The queue is empty, you cannot dequeue from it")
