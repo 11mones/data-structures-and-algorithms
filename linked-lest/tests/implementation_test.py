@@ -1,6 +1,6 @@
 ## Can successfully instantiate an empty linked list
 import pytest
-from linked_list.implementation import linked_list
+from linked_list.implementation import linked_list , Stack , Queue
 
 
 
@@ -341,3 +341,226 @@ def test_happy():
     actual = temp[2]
     expected = 6
     assert actual == expected
+
+
+
+
+    # Code challenge 08 
+
+
+# Can successfully push onto a stack
+# Can successfully push multiple values onto a stack
+
+def test_pushing():
+    s = Stack()
+    s.push("ali")
+    s.push("mohammed")
+    s.push("sarah")
+    s.push("alia")
+    s.push("leo messi")
+
+    # now i have : leo messi -> alia -> sarah -> mohammed -> ali -> None
+    count = 0
+    current = s.top
+    while current : 
+        current = current.next
+        count+= 1 
+    actual = count
+    expected = 5
+    assert actual == expected
+
+
+
+
+# Can successfully pop off the stack
+def test_popping():
+    s = Stack()
+    s.push("ali")
+    s.push("mohammed")
+    s.push("sarah")
+    s.push("alia")
+    s.push("leo messi")
+
+    # now i have : leo messi -> alia -> sarah -> mohammed -> ali -> None
+    count = 0
+    current = s.top
+    while current : 
+        current = current.next
+        count+= 1 
+    s.pop()
+    count-=1
+    actual = count
+    expected = 4
+    assert actual == expected
+
+
+
+# Can successfully empty a stack after multiple pops
+
+def test_popping_till_empty():
+    s = Stack()
+    s.push("ali")
+    s.push("mohammed")
+    s.push("sarah")
+    s.push("alia")
+    s.push("leo messi")
+
+    # now i have : leo messi -> alia -> sarah -> mohammed -> ali -> None
+    count = 5
+    current = s.top
+
+
+    s.pop()
+    count-=1
+    s.pop()
+    count-=1
+    s.pop()
+    count-=1
+    s.pop()
+    count-=1
+    s.pop()
+    count-=1
+
+    actual = count
+    expected = 0
+    assert actual == expected
+
+
+# Can successfully peek the next item on the stack
+
+def test_peek():
+    s = Stack()
+    s.push("ali")
+    s.push("mohammed")
+    s.push("sarah")
+    s.push("alia")
+    s.push("leo messi")
+
+    # now i have : leo messi -> alia -> sarah -> mohammed -> ali -> None
+
+    ac= s.peek()
+
+    actual = ac
+    expected = "leo messi"
+    assert actual == expected
+
+
+
+# Can successfully instantiate an empty stack
+
+
+def test_instantiate_empty():
+    s = Stack()
+    ac = s.top
+    actual = ac
+    expected = None
+    assert actual == expected
+
+
+
+# Calling pop or peek on empty stack raises exception
+def test_peek_empty():
+    s = Stack()
+    ac = s.peek()
+
+    actual = ac
+    expected = "Mones"
+    assert actual == expected
+
+
+
+
+
+
+
+
+
+
+# Can successfully enqueue into a queue
+# Can successfully enqueue multiple values into a queue
+def test_enqueue():
+    q = Queue()
+    q.enqueue("Mones")
+    q.enqueue("Mohammed")
+    q.enqueue("Mary")
+    q.enqueue("Jennifer aniston")
+    q.enqueue("mark walberg")
+
+    actual = q.back.data
+    expected = "mark walberg"
+    assert actual == expected
+
+
+# Can successfully dequeue out of a queue the expected value
+def test_denqueue():
+    q = Queue()
+    q.enqueue("Mones")
+    q.enqueue("Mohammed")
+    q.enqueue("Mary")
+    q.enqueue("Jennifer aniston")
+    q.enqueue("mark walberg")
+    
+    q.dequeue()
+
+    actual = q.front.data
+    expected = "Mohammed"
+    assert actual == expected
+
+
+
+# Can successfully peek into a queue, seeing the expected value
+def test_denqueue_peek():
+    q = Queue()
+    q.enqueue("Mones")
+    q.enqueue("Mohammed")
+    q.enqueue("Mary")
+    q.enqueue("Jennifer aniston")
+    q.enqueue("mark walberg")
+    
+
+
+    actual = q.peek()
+    expected = "Mones"
+    assert actual == expected
+
+
+
+# Can successfully empty a queue after multiple dequeues
+def test_denqueue_till_empty():
+    q = Queue()
+    q.enqueue("Mones")
+    q.enqueue("Mohammed")
+    q.enqueue("Mary")
+    q.enqueue("Jennifer aniston")
+    q.enqueue("mark walberg")
+    q.dequeue()
+    q.dequeue()
+    q.dequeue()
+    q.dequeue()
+    q.dequeue()
+
+
+    actual = q.front
+    expected = None
+    assert actual == expected
+
+
+# Can successfully instantiate an empty queue
+def test_instantiate_empty():
+    q = Queue()
+    ac = q.front
+    actual = ac
+    expected = None
+    assert actual == expected
+
+
+
+# Calling dequeue or peek on empty queue raises exception
+def test_calling_empty():
+    q = Queue()
+    ac = q.dequeue()
+    actual = ac
+    expected = None
+    assert actual == expected
+
+

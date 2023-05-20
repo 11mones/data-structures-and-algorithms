@@ -1,5 +1,5 @@
 import pytest
-class node : 
+class Node : 
     def __init__(self , data):
         self.data = data
         self.next = None # Here when we initialize the linked list the next points to null 
@@ -16,7 +16,7 @@ class linked_list :
 
 
     def insertToHead(self,value):
-        new_node = node(value)
+        new_node = Node(value)
         new_node.next = self.head
         self.head = new_node
 
@@ -50,6 +50,9 @@ class linked_list :
 
 
     def append(self, value):
+
+        new_node = Node(value)
+
                 """
     1- Create a new node with the given value.
     2-Check if the linked list is empty by verifying if self.head is None.
@@ -59,6 +62,7 @@ class linked_list :
          
         """
         new_node = node(value)
+
         if self.head is None: # This means the list is empty
             self.head = new_node
         else:
@@ -71,6 +75,9 @@ class linked_list :
     
 
     def insert_before(self, target, value):
+
+        new_node = Node(value)
+
         """
     1-Create a new node with the given value.
     2-Check if the linked list is empty by verifying if self.head is None. If it is, return without making any changes.
@@ -108,6 +115,9 @@ class linked_list :
 
 
     def insert_after(self, target, value):
+
+        new_node = Node(value)
+
          """
     1-Create a new node with the given value.
     2-Traverse the linked list starting from the head node:
@@ -121,6 +131,7 @@ class linked_list :
     3-If the target value is not found in the linked list, the method will reach the end of the list without making any changes.
         """
         new_node = node(value)
+
         current = self.head
         while current.next is not None:
             if current.next.data == target:
@@ -146,7 +157,7 @@ class linked_list :
         we want also to check if the length of the list l is equal to 1 to return the single element of linked list if it's length is 1
         and outside the loop we return the element at index k in the list l, which represents the kth node from the end of the
           linked list.
-               
+
         """
         if k <0:
             raise IndexError("Tou entered negative value")
@@ -163,6 +174,89 @@ class linked_list :
         return l[k]
 
 
+
+
+# Code challenge 08
+
+class Stack:
+    def __init__(self,top=None):
+        self.top = top
+
+    def push(self,value):
+        node = Node(value)
+        node.next = self.top
+        self.top = node
+
+    def pop(self):
+        #check if the statck is empty :
+        if self.top == None: 
+            raise Exception("The stack is empty you can not pop from it")
+        else :
+            temp= self.top
+            self.top = temp.next
+            temp.next = None
+            return temp.data
+
+    def peek(self):
+        if self.top == None: 
+            raise Exception("The stack is empty you can not peek from it")
+        else : 
+            return self.top.data
+
+        
+class Queue:
+    def __init__(self,front=None,back=None):
+        self.front = front # first node in th queue
+        self.back=back    # last node in queue    
+
+
+
+
+    def enqueue(self, value):
+        node = Node(value)
+        if self.front is None:
+            self.front = node
+            self.back = node
+        else:
+            self.back.next = node
+            self.back = node
+
+    def dequeue(self):
+        if self.front is None:
+            raise Exception("The queue is empty, you cannot dequeue from it")
+        else:
+            temp = self.front
+            self.front = temp.next
+            if self.front is None:
+                self.back = None
+            temp.next = None
+            return temp.data
+
+
+    def peek(self):
+        if self.front == None: 
+            raise Exception("The queue is empty you can not peek from it")
+        else : 
+            return self.front.data
+
+    
+    def __str__(self):
+        current=self.front
+        string=""
+        while current:
+            string+=f"{current.value}"
+            string+=" -> "
+            current=current.next
+        return string+"None"  
+
+    def __str__(self):
+        current=self.top
+        string=""
+        while current:
+            string+=f"{current.data}"
+            string+=" -> "
+            current=current.next
+        return string+"None"  
 
 # lo = linked_list()
 # lo.append(5)
@@ -181,6 +275,14 @@ class linked_list :
 # ll.append(9)  
 # print(ll.__str__())
 # print(ll.kthFromEnd(-2))
+
+s = Stack()
+s.push("ali")
+s.push("mohammed")
+s.push("sarah")
+s.push("alia")
+s.push("leo messi")
+print(s)
 
 
 
