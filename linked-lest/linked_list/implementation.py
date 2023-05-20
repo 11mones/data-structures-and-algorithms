@@ -53,7 +53,7 @@ class linked_list :
 
         new_node = Node(value)
 
-                """
+        """
     1- Create a new node with the given value.
     2-Check if the linked list is empty by verifying if self.head is None.
     3-If the linked list is empty, set self.head to the new node.
@@ -118,7 +118,7 @@ class linked_list :
 
         new_node = Node(value)
 
-         """
+        """
     1-Create a new node with the given value.
     2-Traverse the linked list starting from the head node:
         -Check if the data of the current node is equal to the target value.
@@ -183,11 +183,22 @@ class Stack:
         self.top = top
 
     def push(self,value):
+        """
+    Pushes a value onto the top of the stack.
+    Argument : The value to be pushed onto the stack.
+
+        """
         node = Node(value)
         node.next = self.top
         self.top = node
 
     def pop(self):
+        """
+    Removes and returns the value from the top of the stack.
+    Returns The value that was removed from the top of the stack.
+    Raises Exception: If the stack is empty and there is nothing to pop.
+
+        """
         #check if the statck is empty :
         if self.top == None: 
             raise Exception("The stack is empty you can not pop from it")
@@ -198,6 +209,12 @@ class Stack:
             return temp.data
 
     def peek(self):
+        """
+    Returns the value from the top of the stack without removing it.
+    Returns The value at the top of the stack.
+    Raises Exception: If the stack is empty and there is nothing to peek.
+
+        """
         if self.top == None: 
             raise Exception("The stack is empty you can not peek from it")
         else : 
@@ -222,6 +239,10 @@ class Queue:
             self.back = node
 
     def dequeue(self):
+        """
+    Adds an element to the back of the queue.
+    Argsument is the value to be added to the queue.
+        """
         if self.front is None:
             raise Exception("The queue is empty, you cannot dequeue from it")
         else:
@@ -234,6 +255,12 @@ class Queue:
 
 
     def peek(self):
+        """
+    Returns the value of the element at the front of the queue without removing it.
+    Raises an Exception: If the queue is empty.
+    Returns The value of the element at the front of the queue.
+
+        """
         if self.front == None: 
             raise Exception("The queue is empty you can not peek from it")
         else : 
@@ -245,15 +272,6 @@ class Queue:
         string=""
         while current:
             string+=f"{current.value}"
-            string+=" -> "
-            current=current.next
-        return string+"None"  
-
-    def __str__(self):
-        current=self.top
-        string=""
-        while current:
-            string+=f"{current.data}"
             string+=" -> "
             current=current.next
         return string+"None"  
