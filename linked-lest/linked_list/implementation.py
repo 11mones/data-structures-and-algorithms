@@ -145,8 +145,39 @@ class linked_list :
 
 
 
+    def zip(self, other_list):
+        if self.head is None:
+            self.head = other_list.head
+            return
+
+        if other_list.head is None:
+            return
+
+        current_self = self.head
+        current_other = other_list.head
+        next_self = None
+        next_other = None
+
+        while current_self and current_other:
+            next_self = current_self.next
+            next_other = current_other.next
+
+            current_self.next = current_other
+            current_other.next = next_self
+
+            current_self = next_self
+            current_other = next_other
+
+        if current_other:
+            current_self.next = current_other
+
+        other_list.head = None
 
 
+
+
+
+        
 
     def kthFromEnd(self , k) : 
 
