@@ -2,7 +2,9 @@
 I want to create a method that takes two linked lists and returns one linked list that contain the two lists merged.
 
 ## Whiteboard Process
+
 ![algo (11)](https://github.com/11mones/data-structures-and-algorithms/assets/72322641/bb536504-a7ed-4530-9dae-bee7c0c6ab80)
+
 ## Approach & Efficiency
 the algorithim is : create empty linked list  (zipped),
 initialize  temp to point to zipped head and po1 and po2 to point to the heads of l1 and l2 then we will iterate while both po1 and po2 are not None, then create a new node with the data from po1 and add it to the zipped list and If zipped is empty assign the new node as the head of zipped, if it is not empty  set the next attribute of the previous node in zipped to the new node.
