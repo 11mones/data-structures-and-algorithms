@@ -2,7 +2,7 @@
 I want to create a method that takes two linked lists and returns one linked list that contain the two lists merged.
 
 ## Whiteboard Process
-
+![Alt text](vscode-local:/c%3A/Users/mones%20saeed/Downloads/algo%20%2811%29.jpg)
 
 ## Approach & Efficiency
 the algorithim is : create empty linked list  (zipped),
