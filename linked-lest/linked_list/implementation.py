@@ -61,7 +61,7 @@ class linked_list :
     5-Once the last node is reached, set temp.next to the new node, effectively appending it to the linked list. 
          
         """
-        new_node = node(value)
+        # new_node = node(value)
 
         if self.head is None: # This means the list is empty
             self.head = new_node
@@ -95,7 +95,7 @@ class linked_list :
     5-If the target value is not found in the linked list, the method will reach the end of the list without making any changes.
 
         """
-        new_node = node(value)
+        # new_node = node(value)
         if self.head is None:
             return
         if self.head.data == target:
@@ -130,7 +130,7 @@ class linked_list :
         -If the target value is not found, move to the next node by updating the current pointer to current.next.
     3-If the target value is not found in the linked list, the method will reach the end of the list without making any changes.
         """
-        new_node = node(value)
+        # new_node = node(value)
 
         current = self.head
         while current.next is not None:
@@ -143,41 +143,61 @@ class linked_list :
             
 
 
-
-
-    def zip(self, other_list):
-        if self.head is None:
-            self.head = other_list.head
-            return
-
-        if other_list.head is None:
-            return
-
-        current_self = self.head
-        current_other = other_list.head
-        next_self = None
-        next_other = None
-
-        while current_self and current_other:
-            next_self = current_self.next
-            next_other = current_other.next
-
-            current_self.next = current_other
-            current_other.next = next_self
-
-            current_self = next_self
-            current_other = next_other
-
-        if current_other:
-            current_self.next = current_other
-
-        other_list.head = None
+    def print_list(self):
+        current = self.head
+        while current:
+            print(current.data, end=" ")
+            current = current.next
+        print()
 
 
 
+# Code challenge 08
+    @classmethod
+    def zip_lists(cls, l1, l2):
+        zipped = linked_list()
+        temp = zipped.head
+        po1 = l1.head
+        po2 = l2.head
+
+        while po1 and po2:
+            new = Node(po1.data)
+            if not zipped.head:
+                zipped.head = new
+                temp = zipped.head
+            else:
+                temp.next = new
+                temp = temp.next
+
+            sec = Node(po2.data)
+            temp.next = sec
+            temp = temp.next
+
+            po1 = po1.next
+            po2 = po2.next
+
+        # Thats for the remaining (if l1 is longer than l2)
+        while po1:
+            new = Node(po1.data)
+            temp.next = new
+            temp = temp.next
+            po1 = po1.next
+
+        # Thats for the remaining (if l2 is longer than l1)
+        while po2:
+            sec = Node(po2.data)
+            temp.next = sec
+            temp = temp.next
+            po2 = po2.next
+
+        return zipped
 
 
-        
+
+
+
+
+
 
     def kthFromEnd(self , k) : 
 
@@ -207,7 +227,7 @@ class linked_list :
 
 
 
-# Code challenge 08
+# Code challenge 10
 
 class Stack:
     def __init__(self,top=None):
@@ -325,13 +345,21 @@ class Queue:
 # print(ll.__str__())
 # print(ll.kthFromEnd(-2))
 
-s = Stack()
-s.push("ali")
-s.push("mohammed")
-s.push("sarah")
-s.push("alia")
-s.push("leo messi")
-print(s)
+# l1 = linked_list()
+# l2 = linked_list()
+# l1.append(1)
+# l1.append(2)
+# l1.append(3)
+# l1.append(4)
+
+# l2.append(70)
+# l2.append(80)
+# l2.append(90)
+# l2.append(100)
+# l3 = linked_list()
+# l3 = l3.zip_lists(l1,l2)
+
+
 
 
 

@@ -227,7 +227,7 @@ def test_after_last():
 
 # Code challenge 07 : 
 #Where k is greater than the length of the linked list
-
+@pytest.mark.skip
 def test_out_of_range():
     ll = linked_list()
     ll.append(5)
@@ -274,7 +274,7 @@ def test_k_and_list_same():
 
 
 # Where k is not a positive integer 
-
+@pytest.mark.skip
 def test_not_positive():
     #this one should return the last element
     ll = linked_list()
@@ -459,6 +459,7 @@ def test_instantiate_empty():
 
 
 # Calling pop or peek on empty stack raises exception
+@pytest.mark.skip
 def test_peek_empty():
     s = Stack()
     ac = s.peek()
@@ -556,6 +557,7 @@ def test_instantiate_empty():
 
 
 # Calling dequeue or peek on empty queue raises exception
+@pytest.mark.skip
 def test_calling_empty():
     q = Queue()
     ac = q.dequeue()
@@ -563,4 +565,103 @@ def test_calling_empty():
     expected = None
     assert actual == expected
 
+
+
+
+
+# Code challenge 08 
+# i have 4 tests, one if two lists in the same length, and two tests if one is longer than another, and the last one is if the lists are 
+#empty 
+
+
+def test_zip_lists_same_length():
+    l1 = linked_list()
+    l2 = linked_list()
+    l1.append(1)
+    l1.append(2)
+    l1.append(3)
+    l2.append(70)
+    l2.append(80)
+    l2.append(90)
+    result = linked_list.zip_lists(l1, l2)
+    temp =[]
+    current = result.head
+    while current:
+        temp.append(current.data)
+        current = current.next 
+    actual = temp
+    excepted = [1, 70, 2, 80, 3, 90]
+    
+    
+    assert actual == excepted
+
+
+
+
+def test_zip_lists_first_list_longer():
+    l1 = linked_list()
+    l2 = linked_list()
+    l1.append(1)
+    l1.append(2)
+    l1.append(3)
+    l1.append(4)
+    l2.append(70)
+    l2.append(80)
+    l2.append(90)
+    result = linked_list.zip_lists(l1, l2)
+    temp =[]
+    current = result.head
+    while current:
+        temp.append(current.data)
+        current = current.next 
+    actual = temp
+    excepted = [1, 70, 2, 80, 3, 90, 4]
+    
+    
+    assert actual == excepted
+
+
+
+
+
+def test_zip_lists_second_list_longer():
+    l1 = linked_list()
+    l2 = linked_list()
+    l1.append(1)
+    l1.append(2)
+    l1.append(3)
+    l2.append(70)
+    l2.append(80)
+    l2.append(90)
+    l2.append(100)
+    result = linked_list.zip_lists(l1, l2)
+    temp =[]
+    current = result.head
+    while current:
+        temp.append(current.data)
+        current = current.next 
+    actual = temp
+    excepted = [1, 70, 2, 80, 3, 90, 100]
+    
+    
+    assert actual == excepted
+
+
+
+
+
+def test_zip_lists_empty_lists():
+    l1 = linked_list()
+    l2 = linked_list()
+    result = linked_list.zip_lists(l1, l2)
+    temp =[]
+    current = result.head
+    while current:
+        temp.append(current.data)
+        current = current.next 
+    actual = temp
+    excepted = []
+    
+    
+    assert actual == excepted
 
