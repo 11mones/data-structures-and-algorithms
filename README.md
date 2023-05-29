@@ -24,6 +24,12 @@ Here you can see the code challenges that implemented using some Data structures
 
 
 
+-*[queue using two stacks](https://github.com/11mones/data-structures-and-algorithms/blob/main/stack-queue-pseudo.md)*
+
+
+
+
+
 
 
 
