@@ -270,6 +270,10 @@ class Stack:
             raise Exception("The stack is empty you can not peek from it")
         else : 
             return self.top.data
+        
+    def is_empty(self):
+        if self.top == None: 
+            return  "stack is empty"
 
         
 class Queue:
@@ -326,6 +330,34 @@ class Queue:
             string+=" -> "
             current=current.next
         return string+"None"  
+    
+
+
+# Code challenge 11
+class PseudoQueue:
+    def __init__(self):
+        self.stack1 = Stack() 
+        self.stack2 = Stack()  
+
+    def enqueue(self, value):
+        self.stack1.push(value)
+
+    def dequeue(self):
+        if self.stack2.is_empty():
+            if self.stack1.is_empty():
+                return 
+            while not self.stack1.is_empty():
+                self.stack2.push(self.stack1.pop())
+        return self.stack2.pop()
+    
+# def odd (li) : 
+#     result = 0
+#     temp = li.head
+#     while temp :
+#         if temp.data %2 !=0
+#             result+=temp.data
+#             temp = temp.next
+#         return result
 
 # lo = linked_list()
 # lo.append(5)
@@ -359,7 +391,8 @@ class Queue:
 # l3 = linked_list()
 # l3 = l3.zip_lists(l1,l2)
 
-
+# lista = [1,2,3,4,5,6]
+# print(odd(lista))
 
 
 
