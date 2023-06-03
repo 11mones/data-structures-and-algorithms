@@ -320,6 +320,11 @@ class Queue:
             raise Exception("The queue is empty you can not peek from it")
         else : 
             return self.front.data
+        
+
+    def is_empty(self):
+        if self.front == None: 
+            return  "queue is empty"
 
     
     def __str__(self):
@@ -350,6 +355,47 @@ class PseudoQueue:
                 self.stack2.push(self.stack1.pop())
         return self.stack2.pop()
     
+
+
+
+
+
+
+    # Code challenge 12
+
+
+class AnimalShelter:
+    def __init__(self , species, name):
+        self.species = species
+        self.name = name
+        self.shelter = Queue()
+
+    def enqueue(self, animal):
+        self.shelter.enqueue(animal)
+
+    def dequeue(self, pref):
+        temp_queue = Queue()
+        if pref == "dog" or pref == "cat":
+        
+            while not self.shelter.is_empty():
+                temp_queue.enqueue(self.shelter.dequeue())
+                if temp_queue.back.species == pref:
+                    return temp_queue.back.data
+                
+
+        # to restore the original queue
+            while not temp_queue.is_empty():
+                item = temp_queue.dequeue()
+                self.shelter.enqueue(item)
+
+        return None
+    
+
+
+
+
+
+
 # def odd (li) : 
 #     result = 0
 #     temp = li.head
