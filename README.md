@@ -20,6 +20,16 @@ Here you can see the code challenges that implemented using some Data structures
 -*[Kth element from the end](https://github.com/11mones/data-structures-and-algorithms/blob/main/k-th%20value%20from%20the%20end.md)*
 
 
+-*[Stack and queue](https://github.com/11mones/data-structures-and-algorithms/blob/main/Stack%20and%20queue.md)*
+
+
+
+-*[queue using two stacks](https://github.com/11mones/data-structures-and-algorithms/blob/main/stack-queue-pseudo.md)*
+
+
+
+
+
 
 
 
