@@ -389,10 +389,54 @@ class AnimalShelter:
                 self.shelter.enqueue(item)
 
         return None
+
+
+# Code challenge 13
+# 
+#  
+def validate_brackets(string):
+       
+    """
+    Check if the brackets in the given string are balanced.
+
+    Arguments:
+    - string: A string containing brackets to be validated.
+
+    Returns:
+    - A boolean value indicating whether the brackets are balanced (True) or not (False).
+
+    Description:
+    This function checks if the brackets in the given string are balanced, meaning that each opening bracket has a corresponding closing bracket in the correct order. The function supports three types of brackets: round brackets '()', square brackets '[]', and curly brackets '{}'.
+
+    Examples:
+    - validate_brackets('{}')  # Returns True
+    - validate_brackets('[({}]')  # Returns False
+
+    """
+    stack = Stack()
+    
+    for char in string:
+        if char in ["(", "{", "["]:
+            stack.push(Node(char))  
+        elif char in [")", "}", "]"]:
+            if stack.is_empty():
+                return False  
+            top = stack.pop().data 
+            if (char == ")" and top != "(") or (char == "}" and top != "{") or (char == "]" and top != "["):
+                return False  
+        else:
+            continue  
+    if stack.is_empty() :
+
+        return True
+    else : 
+        return False 
+
     
 
 
-
+# str = "mones([)]"
+# print(1111111,validate_brackets(str))
 
 
 
