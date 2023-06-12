@@ -1,5 +1,5 @@
 import pytest
-from Trees.Trees import Queue , QueueNode , BinaryTree , BST , Tnode
+from  Trees.Trees import Queue , QueueNode , BinaryTree , BST , Tnode
 
 
 
