@@ -28,6 +28,26 @@ Here you can see the code challenges that implemented using some Data structures
 
 
 
+-*[Animal shelter](https://github.com/11mones/data-structures-and-algorithms/blob/main/Animal%20shelter.md)*
+
+
+
+-*[Validate brackets](https://github.com/11mones/data-structures-and-algorithms/blob/main/validate%20brackets.md)*
+
+
+
+-*[Trees](https://github.com/11mones/data-structures-and-algorithms/blob/main/Trees/trees.md)*
+
+
+
+-*[Max in tree](https://github.com/11mones/data-structures-and-algorithms/blob/main/max-tree/max-tree.md)*
+
+
+
+
+
+
+
 
 
 
