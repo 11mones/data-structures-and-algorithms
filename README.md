@@ -20,6 +20,36 @@ Here you can see the code challenges that implemented using some Data structures
 -*[Kth element from the end](https://github.com/11mones/data-structures-and-algorithms/blob/main/k-th%20value%20from%20the%20end.md)*
 
 
+-*[Stack and queue](https://github.com/11mones/data-structures-and-algorithms/blob/main/Stack%20and%20queue.md)*
+
+
+
+-*[queue using two stacks](https://github.com/11mones/data-structures-and-algorithms/blob/main/stack-queue-pseudo.md)*
+
+
+
+-*[Animal shelter](https://github.com/11mones/data-structures-and-algorithms/blob/main/Animal%20shelter.md)*
+
+
+
+-*[Validate brackets](https://github.com/11mones/data-structures-and-algorithms/blob/main/validate%20brackets.md)*
+
+
+
+-*[Trees](https://github.com/11mones/data-structures-and-algorithms/blob/main/Trees/trees.md)*
+
+
+
+-*[Max in tree](https://github.com/11mones/data-structures-and-algorithms/blob/main/max-tree/max-tree.md)*
+
+
+
+
+
+
+
+
+
 
 
 
