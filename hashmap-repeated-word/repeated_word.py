@@ -124,10 +124,20 @@ class HashTable:
     Returns a list of all the  keys present in the Hashtable.
     '''
     return self.keys
-  def find_first_repeated_word(self, input_string):
+  def repeated_word(self, input_string):
 
       cleaned_string = input_string.lower().replace(",", "").replace(".", "").replace("?", "").replace("!", "").replace("-", "")
     
+      words = cleaned_string.split()
+      for word in words:
+          if self.has(word):
+              return word
+          else:
+              self.set(word, 1)
+      return None
+  
+  def repeated_word(self, input_string):
+      cleaned_string = input_string.lower().replace(",", "").replace(".", "").replace("?", "").replace("!", "").replace("-", "")
       words = cleaned_string.split()
       for word in words:
           if self.has(word):

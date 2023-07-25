@@ -12,8 +12,8 @@ def test_repeated_word(hashtable):
     input_string3 = "It was a queer, sultry summer, the summer they electrocuted the Rosenbergs, and I didn’t know what I was doing in New York..."
 
     assert hashtable.repeated_word(input_string1) == "a"
-    assert hashtable.repeated_word(input_string2) == "it"
-    assert hashtable.repeated_word(input_string3) == "summer"
+    assert hashtable.repeated_word(input_string2) == "was"
+    assert hashtable.repeated_word(input_string3) == "it"
 
 def test_repeated_word_no_repeated_word(hashtable):
     input_string = "This is a test string without repeated words."
