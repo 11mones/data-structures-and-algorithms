@@ -22,3 +22,27 @@ def test_depth_first(sample_graph):
     assert result == ["A", "B", "D", "E", "C"]
 
 
+def test_depth_first_single_vertex(sample_graph):
+    result = sample_graph.depth_first("E")
+    assert result == ["E"]
+
+def test_depth_first_disconnected_graph(sample_graph):
+    sample_graph.add_vertex("F")
+    result = sample_graph.depth_first("A")
+    assert result == ["A", "B", "D", "E", "C"]
+
+
+def test_depth_first_reverse_order(sample_graph):
+    result = sample_graph.depth_first("C")
+    assert result == ["C"]
+
+def test_depth_first_multiple_starts(sample_graph):
+    result = sample_graph.depth_first("D")
+    assert result == ["D", "E"]
+
+
+
+
+
+
+
